@@ -1,32 +1,35 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection.js");
+const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection');
+
 
 class User extends Model {
-  checkPassword(loginPass) {
-    return bcrypt.compareSync(loginPass, this.userPassword);
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-
 User.init(
   {
-    // define columns
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
-    userFname: {
+    fname: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    userLname: {
+    lname: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    userEmail: {
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
@@ -34,14 +37,14 @@ User.init(
         isEmail: true
       }
     },
-    userPassword: {
+    password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [8]
       }
     },
-    streetAddress: {
+    address1: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -53,7 +56,7 @@ User.init(
       type: DataTypes.STRING(2),
       allowNull: false,
     },
-    zipCode: {
+    zip: {
       type: DataTypes.INTEGER(5),
       allowNull: false,
     },
@@ -61,21 +64,20 @@ User.init(
   {
     hooks: {
       async beforeCreate(data) {
-        data.userPassword = await bcrypt.hash(data.userPassword, 12);
+        data.password = await bcrypt.hash(data.password, 10);
         return data;
       },
 
       async beforeUpdate(data) {
-        data.userPassword = await bcrypt.hash(data.userPassword, 12);
+        data.password = await bcrypt.hash(data.password, 10);
         return data;
       }
     },
-
     sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: 'user'
   }
 );
 
