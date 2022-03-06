@@ -12,7 +12,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 require('dotenv').config();
 
 const ses = {
-  secret: 'Lemongrass is not YUMMY!',
+  secret: process.env.SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true,
