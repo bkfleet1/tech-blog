@@ -144,7 +144,7 @@ li {
   width: max-content;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
+  /* position: absolute; */
   top: 10%;
 }
 
@@ -258,7 +258,10 @@ main {
   padding: 2% 4%;
 }
 
-
+.app_heads {
+  font-weight: bold;
+  font-size: large;
+}
 
 .post {
   box-shadow: var(--box-shadow);
@@ -276,19 +279,58 @@ main {
   color: #7d7d7d;
 }
 
+.title {
+  box-shadow: var(--box-shadow);
+  border: 0.0625rem solid var(--tertiary-color);
+  border-width: 1px;
+  border-radius: 6px;
+  padding: 6px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.message {
+  box-shadow: var(--box-shadow);
+  border: 0.0625rem solid var(--tertiary-color);
+  border-width: 1px;
+  border-radius: 6px;
+  padding: 6px;
+  margin: 10px;
+  background-color: var(--primary-color);
+}
+
+.app_logo {
+  box-shadow: var(--box-shadow);
+  border: 0.0625rem solid var(--tertiary-color);
+  border-width: 1px;
+  border-radius: 6px;
+  padding: 1%;
+  margin: 1%;
+  background-color: var(--primary-color);
+}
+
+.post-message {
+  width: 100%;
+  box-shadow: var(--box-shadow);
+  border: 0.0625rem solid var(--tertiary-color);
+  border-width: 1px;
+  border-radius: 6px;
+  margin-bottom: 1.2%;
+}
+
+.post-title {
+  width: 100%;
+  box-shadow: var(--box-shadow);
+  border: 0.0625rem solid var(--tertiary-color);
+  border-width: 1px;
+  border-radius: 6px;
+  margin-bottom: 1.2%;
+}
+
 .edit-link {
   display: block;
   margin: -1.5% 0 2% 0;
 }
-
-/* .upvote-btn {
-  background-color: #197d0f;
-  transition: background-color .1s;
-}
-
-.upvote-btn:hover {
-  background-color: #1f9c13;
-} */
 
 .comment-form {
   margin-bottom: 5%;

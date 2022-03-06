@@ -1,12 +1,12 @@
 <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h2>
-    update post
-  </h2>
+  <div class="app_heads">
+    update blog post
+  </div>
   <form class="edit-post-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <span>({{format_url post.post_url}})</span>
+      <input type="text" name="post-title" value="{{post.title}}" />
+      <input type="text" name="post-message" value="{{post.message}}" />
     </div>
     <div>
       {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
@@ -19,7 +19,7 @@
 </article>
 
 <form class="comment-form">
-  <div> comment</div>
+  <div class="app_heads">comment</div>
   <div>
     <textarea name="comment-body"></textarea>
   </div>
