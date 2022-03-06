@@ -3,7 +3,7 @@
 ## [Description](#description)
 The Tech Blog is a micro-blogging platform on which software developers can post content and comments to further professional development.
 
->> - Deployed Application URL: https://
+>> - Deployed Application URL: https://tex-blog.herokuapp.com/
 >> ![Deployed Application](/images/deployed.png)
 
 ![Repository Size](https://img.shields.io/github/repo-size/bkfleet1/tech-blog?style=plastic)
